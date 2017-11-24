@@ -11,6 +11,7 @@ export class CarsComponent implements OnInit {
   inputText = ``;
   input2Text = ``;
   input3Text = ``;
+  input4Text = ``;
 
   constructor() {
   }
@@ -28,6 +29,10 @@ export class CarsComponent implements OnInit {
   }
   onInput3(str) {
     this.input3Text = str.value;
+  }
+
+  onInput4(event) {
+    this.input4Text = event.target.value;
   }
 
 }
