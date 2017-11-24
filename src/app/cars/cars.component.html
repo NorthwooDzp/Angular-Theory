@@ -1,4 +1,17 @@
-<button [disabled]="!canIAdd" class="btn btn-primary">Добавить машину</button>
+<button class="btn btn-primary" (click)="changeStatus()">Добавить машину</button>
+<p>{{addCarStatus}}</p>
 <hr>
 <app-car></app-car>
 
+<hr>
+
+<input type="text" class="form-control" (keyup)="onKeyUp($event)">
+<p>{{inputText}}</p>
+
+<input type="text" class="form-control" [(ngModel)]="input2Text">
+
+<p>{{input2Text}}</p>
+
+<input type="text" class="form-control" #myInput (input)="onInput3(myInput)">
+
+<p>{{input3Text}}</p>

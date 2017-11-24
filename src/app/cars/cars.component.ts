@@ -7,15 +7,27 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  canIAdd = false;
+  addCarStatus = ``;
+  inputText = ``;
+  input2Text = ``;
+  input3Text = ``;
 
   constructor() {
-    setTimeout(() => {
-      this.canIAdd = true;
-    }, 4000);
+  }
+
+  changeStatus() {
+    this.addCarStatus = `Машина добавлена`;
+  }
+
+  onKeyUp(event: Event) {
+    // console.log(event);
+    this.inputText = (<HTMLInputElement>event.target).value;
   }
 
   ngOnInit() {
+  }
+  onInput3(str) {
+    this.input3Text = str.value;
   }
 
 }
