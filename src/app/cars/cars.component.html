@@ -9,7 +9,6 @@
 </ng-template>
 
 
-
 <hr>
 
 <app-car *ngFor="let car of cars"></app-car>
@@ -17,8 +16,15 @@
 <hr>
 <ul>
   <li *ngFor="let car of cars2; let idx = index">
-    <b>{{idx + 1}}</b> - <i>{{car}}</i></li>
+    <div
+      [ngStyle]="{backgroundColor: ((idx + 1)%2) === 0 ? 'red': 'green', color: 'white'}"
+      [ngClass]="{'big-text': car.length > 4}"
+    ><!--can use a function(): boolean in directive ngClass-->
+      <b>{{idx + 1}}</b> - <i>{{car}}</i>
+    </div>
+  </li>
 </ul>
+
 
 
 <!--<input type="text" class="form-control" (keyup)="onKeyUp($event)">

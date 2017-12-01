@@ -10,9 +10,9 @@ export class CarComponent implements OnInit {
   public carName = `Ford`;
   public carYear = 2011;
 
-  getName () {
-    return this.carName;
-  }
+  /*getName () {
+    return this.carName;  //not need
+  }*/
 
   constructor() {
   }

@@ -14,7 +14,7 @@ export class CarsComponent implements OnInit {
   input4Text = ``;*/
   carName = ``;
   carYear = 2011;
-  cars2 = [`BMW`, `Audi`, `Toyota`, `Lexus`, `Lada`, `ZaZ`];
+  cars2 = [`BMW`, `Audi`, `Toyota`, `Lexus`, `Lada`, `ZaZ`, `Mazda`];
 
   constructor() {
   }
