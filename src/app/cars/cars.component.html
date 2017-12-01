@@ -12,8 +12,13 @@
 
 <hr>
 
-<app-car></app-car>
+<app-car *ngFor="let car of cars"></app-car>
 
+<hr>
+<ul>
+  <li *ngFor="let car of cars2; let idx = index">
+    <b>{{idx + 1}}</b> - <i>{{car}}</i></li>
+</ul>
 
 
 <!--<input type="text" class="form-control" (keyup)="onKeyUp($event)">

@@ -13,13 +13,32 @@ export class CarsComponent implements OnInit {
   input3Text = ``;
   input4Text = ``;*/
   carName = ``;
-  carYear = ``;
+  carYear = 2011;
+  cars2 = [`BMW`, `Audi`, `Toyota`, `Lexus`, `Lada`, `ZaZ`];
 
   constructor() {
   }
 
+  cars: [{ name: string, year: number }] = [
+    {
+      name: 'Ford',
+      year: 2017
+    }, {
+      name: 'Audi',
+      year: 2010
+    }, {
+      name: `Lada`,
+      year: 2016
+    }];
+
   addCar() {
     this.addCarStatus = true;
+    const newCar: { name: string, year: number } = {name: ``, year: 0};
+    newCar.name = this.carName;
+    newCar.year = this.carYear;
+    this.cars.push(newCar);
+    this.carName = ``;
+    this.carYear = 2017;
   }
 
   /* onKeyUp(event: Event) {
