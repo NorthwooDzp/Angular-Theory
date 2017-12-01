@@ -7,6 +7,7 @@ import {HomepageComponent} from './homepage/homepage.component';
 import {CarsComponent} from './cars/cars.component';
 import {CarComponent} from './car/car.component';
 import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

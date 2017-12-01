@@ -1,11 +1,22 @@
-<button class="btn btn-primary" (click)="changeStatus()">Добавить машину</button>
-<p>{{addCarStatus}}</p>
+<input type="text" class="form-control" [(ngModel)]="carName">
+<input type="text" class="form-control" [(ngModel)]="carYear">
+
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<p *ngIf="addCarStatus; else notAdd">Машина добавлена</p>
+
+<ng-template #notAdd>
+  <p>Машина не добавлена</p>
+</ng-template>
+
+
+
 <hr>
+
 <app-car></app-car>
 
-<hr>
 
-<input type="text" class="form-control" (keyup)="onKeyUp($event)">
+
+<!--<input type="text" class="form-control" (keyup)="onKeyUp($event)">
 <p>{{inputText}}</p>
 
 <input type="text" class="form-control" [(ngModel)]="input2Text">
@@ -18,4 +29,4 @@
 
 <input type="text" class="form-control" (keyup.enter)="onInput4($event)">
 
-<p>{{input4Text}}</p>
+<p>{{input4Text}}</p>-->

@@ -7,32 +7,35 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  addCarStatus = ``;
-  inputText = ``;
+  addCarStatus = false;
+  /*inputText = ``;
   input2Text = ``;
   input3Text = ``;
-  input4Text = ``;
+  input4Text = ``;*/
+  carName = ``;
+  carYear = ``;
 
   constructor() {
   }
 
-  changeStatus() {
-    this.addCarStatus = `Машина добавлена`;
+  addCar() {
+    this.addCarStatus = true;
   }
 
-  onKeyUp(event: Event) {
-    // console.log(event);
-    this.inputText = (<HTMLInputElement>event.target).value;
-  }
+  /* onKeyUp(event: Event) {
+     // console.log(event);
+     this.inputText = (<HTMLInputElement>event.target).value;
+   }*/
 
   ngOnInit() {
   }
-  onInput3(str) {
-    this.input3Text = str.value;
-  }
 
-  onInput4(event) {
-    this.input4Text = event.target.value;
-  }
+  /* onInput3(str) {
+     this.input3Text = str.value;
+   }
+
+   onInput4(event) {
+     this.input4Text = event.target.value;
+   }*/
 
 }
