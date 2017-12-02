@@ -7,14 +7,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  addCarStatus = false;
+  // addCarStatus = false;
   /*inputText = ``;
   input2Text = ``;
   input3Text = ``;
   input4Text = ``;*/
-  carName = ``;
-  carYear = 2011;
-  cars2 = [`BMW`, `Audi`, `Toyota`, `Lexus`, `Lada`, `ZaZ`, `Mazda`];
+  /*carName = ``;
+  carYear = 2011;*/
+  // cars2 = [`BMW`, `Audi`, `Toyota`, `Lexus`, `Lada`, `ZaZ`, `Mazda`];
 
   constructor() {
   }
@@ -31,15 +31,15 @@ export class CarsComponent implements OnInit {
       year: 2016
     }];
 
-  addCar() {
-    this.addCarStatus = true;
-    const newCar: { name: string, year: number } = {name: ``, year: 0};
-    newCar.name = this.carName;
-    newCar.year = this.carYear;
-    this.cars.push(newCar);
+ /* addCar() {
+    // this.addCarStatus = true;
+    this.cars.push({
+      name: this.carName,
+      year: this.carYear
+    });
     this.carName = ``;
     this.carYear = 2017;
-  }
+  }*/
 
   /* onKeyUp(event: Event) {
      // console.log(event);
