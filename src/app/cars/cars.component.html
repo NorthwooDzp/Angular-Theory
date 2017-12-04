@@ -6,7 +6,7 @@
 <ng-template #notAdd>
   <p>Машина не добавлена</p>
 </ng-template>-->
-<app-add-car></app-add-car>
+<app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 
 <hr>
 

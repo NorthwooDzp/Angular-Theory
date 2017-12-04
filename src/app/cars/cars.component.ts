@@ -14,6 +14,7 @@ export class CarsComponent implements OnInit {
   input4Text = ``;*/
   /*carName = ``;
   carYear = 2011;*/
+
   // cars2 = [`BMW`, `Audi`, `Toyota`, `Lexus`, `Lada`, `ZaZ`, `Mazda`];
 
   constructor() {
@@ -31,15 +32,15 @@ export class CarsComponent implements OnInit {
       year: 2016
     }];
 
- /* addCar() {
-    // this.addCarStatus = true;
-    this.cars.push({
-      name: this.carName,
-      year: this.carYear
-    });
-    this.carName = ``;
-    this.carYear = 2017;
-  }*/
+  /* addCar() {
+     // this.addCarStatus = true;
+     this.cars.push({
+       name: this.carName,
+       year: this.carYear
+     });
+     this.carName = ``;
+     this.carYear = 2017;
+   }*/
 
   /* onKeyUp(event: Event) {
      // console.log(event);
@@ -49,6 +50,9 @@ export class CarsComponent implements OnInit {
   ngOnInit() {
   }
 
+  updateCarList(car: {name: string, year: number}) {
+    this.cars.push(car);
+  }
   /* onInput3(str) {
      this.input3Text = str.value;
    }
