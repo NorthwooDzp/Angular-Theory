@@ -7,7 +7,8 @@ import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core'
 })
 
 export class CarComponent implements OnInit {
-  @Input('carItem') car;
+  @Input('carItem') car: {name: string, year: number};
+  // @Input() name: string;
   @ContentChild('carHeading') carHeading: ElementRef;
   /*  public carName = `Ford`;
   public carYear = 2011;*/
@@ -24,5 +25,8 @@ export class CarComponent implements OnInit {
     console.log(this.carHeading.nativeElement.innerText);
   }
 
+  /*ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
+  }*/
 
 }

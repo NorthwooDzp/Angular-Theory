@@ -33,7 +33,13 @@ export class CarsComponent implements OnInit {
       name: `Lada`,
       year: 2016,
       saled: false
-    }];
+    }
+  ];
+
+  changeCarName() {
+    console.log('car changed');
+    this.cars[0].name = 'Toyota RAV4';
+  }
 
   /* addCar() {
      // this.addCarStatus = true;
