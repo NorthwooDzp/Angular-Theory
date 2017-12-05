@@ -10,8 +10,17 @@
 <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 
 <hr>
-
-<app-car *ngFor="let car of cars" [carItem]="car"></app-car>
+<div class="list-group">
+  <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+    <div class="alert alert-info" *ngIf="car.saled">Эта машина продана</div>
+    <h4 class="list-group-item-heading" #carHeading>
+      Название: "{{car.name}}"
+    </h4>
+    <p class="list-group-item-text">
+      Год: {{car.year}}
+    </p>
+  </app-car>
+</div>
 
 <hr>
 <!--<ul>
@@ -20,7 +29,7 @@
       &lt;!&ndash;<div&ndash;&gt;
       &lt;!&ndash;[ngStyle]="{backgroundColor: ((idx + 1)%2) === 0 ? 'red': 'green', color: 'white'}"&ndash;&gt;
       &lt;!&ndash;[ngClass]="{'big-text': car.length > 4}"&ndash;&gt;
-      &lt;!&ndash;&gt;&lt;!&ndash;can use a function(): boolean in directive ngClass&ndash;&gt;&ndash;&gt;
+      &lt;!&ndash;can use a function(): boolean in directive ngClass&ndash;&gt;&ndash;&gt;
       <b>{{ idx + 1 }}</b> - <i>{{ car | uppercase }}</i>
     </div>
   </li>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-car',
@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 
 export class CarComponent implements OnInit {
   @Input('carItem') car;
-
+  @ContentChild('carHeading') carHeading: ElementRef;
   /*  public carName = `Ford`;
   public carYear = 2011;*/
 
@@ -21,6 +21,8 @@ export class CarComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.carHeading.nativeElement.innerText);
   }
+
 
 }

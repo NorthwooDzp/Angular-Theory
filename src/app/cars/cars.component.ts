@@ -20,16 +20,19 @@ export class CarsComponent implements OnInit {
   constructor() {
   }
 
-  cars: [{ name: string, year: number }] = [
+  cars: [{ name: string, year: number, saled: boolean }] = [
     {
       name: 'Ford',
-      year: 2017
+      year: 2017,
+      saled: false
     }, {
       name: 'Audi',
-      year: 2010
+      year: 2010,
+      saled: true
     }, {
       name: `Lada`,
-      year: 2016
+      year: 2016,
+      saled: false
     }];
 
   /* addCar() {
@@ -50,9 +53,11 @@ export class CarsComponent implements OnInit {
   ngOnInit() {
   }
 
-  updateCarList(car: {name: string, year: number}) {
+  updateCarList(car: { name: string, year: number, saled: boolean }) {
+    car.saled = false;
     this.cars.push(car);
   }
+
   /* onInput3(str) {
      this.input3Text = str.value;
    }
