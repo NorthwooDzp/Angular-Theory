@@ -10,5 +10,15 @@
   <div class="col-xs-8 col-xs-offset-2">
     <h2 [appBackground]="'red'" [defaultColor]="'green'"><b>{{title}}</b></h2>
     <!-- Можно указать просто appBackground="", но желательно явно указывать передачу параметров -->
+    <ul class="list-group">
+      <li class="list-group-item" (click)="onClick(item)" *ngFor="let item of items">{{item}}</li>
+    </ul>
+  </div>
+  <div [ngSwitch]="current">
+    <p *ngSwitchCase="1">Текущее значение = 1</p>
+    <p *ngSwitchCase="2">Текущее значение = 2</p>
+    <p *ngSwitchCase="3">Текущее значение = 3</p>
+    <p *ngSwitchCase="4">Текущее значение = 4</p>
+    <p *ngSwitchDefault>Совпадения нет</p>
   </div>
 </div>

@@ -22,11 +22,11 @@ export class BackgroundDirective implements OnInit {
 
   @HostListener('mouseenter') mouseEnter() {
     this.background = this.hoverColor;
-    console.log(this.hoverColor);
+    // console.log(this.hoverColor);
   }
 
   @HostListener('mouseleave') mouseLeave() {
     this.background = this.defaultColor;
-    console.log(this.defaultColor);
+    // console.log(this.defaultColor);
   }
 }
