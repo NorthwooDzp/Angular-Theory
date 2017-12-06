@@ -8,6 +8,7 @@
 
 <div class="container">
   <div class="col-xs-8 col-xs-offset-2">
-    <h2 appBackground> <b>{{title}}</b></h2>
+    <h2 [appBackground]="'red'" [defaultColor]="'green'"><b>{{title}}</b></h2>
+    <!-- Можно указать просто appBackground="", но желательно явно указывать передачу параметров -->
   </div>
 </div>
