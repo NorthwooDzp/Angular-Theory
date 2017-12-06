@@ -9,6 +9,7 @@ import {CarComponent} from './car/car.component';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import { AddCarComponent } from './add-car/add-car.component';
+import { BackgroundDirective } from './directives/background.directive';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AddCarComponent } from './add-car/add-car.component';
     HomepageComponent,
     CarsComponent,
     CarComponent,
-    AddCarComponent
+    AddCarComponent,
+    BackgroundDirective
   ],
   imports: [
     BrowserModule,

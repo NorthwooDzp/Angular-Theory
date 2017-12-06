@@ -22,7 +22,7 @@ export class CarComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.carHeading.nativeElement.innerText);
+    // console.log(this.carHeading.nativeElement.innerText);
   }
 
   /*ngOnChanges(changes: SimpleChanges) {
