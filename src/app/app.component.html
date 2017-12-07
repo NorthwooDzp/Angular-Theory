@@ -6,12 +6,13 @@
   </div>
 </div>
 
+<!--
 <div class="container">
   <div class="col-xs-8 col-xs-offset-2">
-    <h2 [appBackground]="'red'" [defaultColor]="'green'"><b>{{title}}</b></h2>
-    <!-- Можно указать просто appBackground="", но желательно явно указывать передачу параметров -->
+    <h2 [appBackground]="'red'" [defaultColor]="'green'"><b>{{ title }}</b></h2>
+    &lt;!&ndash; Можно указать просто appBackground="", но желательно явно указывать передачу параметров &ndash;&gt;
     <ul class="list-group">
-      <li class="list-group-item" (click)="onClick(item)" *ngFor="let item of items">{{item}}</li>
+      <li class="list-group-item" (click)="onClick(item)" *ngFor="let item of items">{{ item }}</li>
     </ul>
   </div>
   <div [ngSwitch]="current">
@@ -20,5 +21,39 @@
     <p *ngSwitchCase="3">Текущее значение = 3</p>
     <p *ngSwitchCase="4">Текущее значение = 4</p>
     <p *ngSwitchDefault>Совпадения нет</p>
+  </div>
+</div>
+-->
+
+<div class="container">
+  <div class="row">
+    <ul>
+      <hr>
+      <li>
+        {{ name }} => {{ name | uppercase }} => {{ name | lowercase }} => {{ name | slice: 0 : 5 }} => {{ name |
+        slice: 2 : 5 | uppercase}}
+      </li>
+      <hr>
+      <li>
+        {{ pi }} => {{ pi | number }} => {{ pi | number: '1.4' }}
+      </li>
+      <hr>
+      <li>
+        {{ money | currency: 'USD': true }}
+      </li>
+      <hr>
+      <li>
+        {{ myDate }} => {{ myDate | date }} => {{ myDate| date: 'fullDate' }} => {{ myDate | date: 'shortDate' }} => {{ myDate | date: 'shortTime' }} => {{ myDate | date: 'fullTime' }} => {{ myDate | date: 'dd.MM.yyyy' }}
+      </li>
+      <hr>
+      <li>
+        {{ amount }} => {{ amount | percent }} => {{ amount | percent: '2.1' }}
+      </li>
+      <hr>
+      <li>
+        {{ object }} => <pre> {{ object | json }} </pre>
+      </li>
+      <hr>
+    </ul>
   </div>
 </div>
