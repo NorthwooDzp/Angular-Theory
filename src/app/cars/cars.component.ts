@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
+  filterName = '';
   // addCarStatus = false;
   /*inputText = ``;
   input2Text = ``;
@@ -28,7 +29,7 @@ export class CarsComponent implements OnInit {
     }, {
       name: 'Audi',
       year: 2010,
-      saled: true
+      saled: false
     }, {
       name: `Lada`,
       year: 2016,
@@ -36,10 +37,10 @@ export class CarsComponent implements OnInit {
     }
   ];
 
-  changeCarName() {
-    console.log('car changed');
-    this.cars[0].name = 'Toyota RAV4';
-  }
+  /*  changeCarName() {
+      console.log('car changed');
+      this.cars[0].name = 'Toyota RAV4';
+    }*/
 
   /* addCar() {
      // this.addCarStatus = true;

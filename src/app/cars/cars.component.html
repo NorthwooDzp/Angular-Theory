@@ -10,8 +10,10 @@
 <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 
 <hr>
+
 <div class="list-group">
-  <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+  <label>Фильтр по названию: <input type="text" [(ngModel)]="filterName"></label>
+  <app-car class="list-group-item" *ngFor="let car of cars | nameFilter: 'name': filterName" [carItem]="car">
     <div class="alert alert-info" *ngIf="car.saled">Эта машина продана</div>
     <h4 class="list-group-item-heading" #carHeading>
       Название: "{{car.name}}"

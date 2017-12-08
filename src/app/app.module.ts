@@ -11,6 +11,7 @@ import {HttpModule} from '@angular/http';
 import { AddCarComponent } from './add-car/add-car.component';
 import { BackgroundDirective } from './directives/background.directive';
 import { PowPipe } from './pipes/pow.pipe';
+import { NameFilterPipe } from './pipes/name-filter.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { PowPipe } from './pipes/pow.pipe';
     CarComponent,
     AddCarComponent,
     BackgroundDirective,
-    PowPipe
+    PowPipe,
+    NameFilterPipe
   ],
   imports: [
     BrowserModule,
