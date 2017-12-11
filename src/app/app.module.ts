@@ -14,6 +14,7 @@ import { PowPipe } from './pipes/pow.pipe';
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import {CarService} from './services/car.service';
 import {LoggerService} from "./services/logger.service";
+import { TestformComponent } from './testform/testform.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {LoggerService} from "./services/logger.service";
     AddCarComponent,
     BackgroundDirective,
     PowPipe,
-    NameFilterPipe
+    NameFilterPipe,
+    TestformComponent
   ],
   imports: [
     BrowserModule,
