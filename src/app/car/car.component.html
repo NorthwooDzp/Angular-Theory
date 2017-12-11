@@ -5,6 +5,6 @@
   <p class="list-group-item-text">
     Год: {{car.year}}
   </p>
-  <input type="button" [disabled]="car.sale" class="btn btn-success" value="Купить" (click)="buyCar()">
-  <input type="button" [disabled]="!car.sale" class="btn btn-warning" value="Вернуть" (click)="returnCar()">
+  <input type="button" [disabled]="car.sale" class="btn btn-success" value="Купить" (click)="buyCar('buy')">
+  <input type="button" [disabled]="!car.sale" class="btn btn-warning" value="Вернуть" (click)="buyCar('return')">
 </div>

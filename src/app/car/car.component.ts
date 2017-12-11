@@ -1,4 +1,5 @@
 import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core';
+import {LoggerService} from "../services/logger.service";
 
 @Component({
   selector: 'app-car',
@@ -18,7 +19,7 @@ export class CarComponent implements OnInit {
   }*/
 
 
-  constructor() {
+  constructor(private logger: LoggerService) {
   }
 
   ngOnInit() {
@@ -28,11 +29,10 @@ export class CarComponent implements OnInit {
   /*ngOnChanges(changes: SimpleChanges) {
     console.log(changes);
   }*/
-  buyCar() {
-    this.car.sale = true;
+  buyCar(status) {
+    this.car.sale = status === 'buy' ? true : false;
+    this.logger.logString(`${this.car.name} status changed to => ${this.car.sale}`);
   }
 
-  returnCar() {
-    this.car.sale = false;
-  }
+  r
 }

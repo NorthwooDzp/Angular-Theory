@@ -13,6 +13,7 @@ import { BackgroundDirective } from './directives/background.directive';
 import { PowPipe } from './pipes/pow.pipe';
 import { NameFilterPipe } from './pipes/name-filter.pipe';
 import {CarService} from './services/car.service';
+import {LoggerService} from "./services/logger.service";
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import {CarService} from './services/car.service';
     FormsModule,
     HttpModule
   ],
-  providers: [CarService],
+  providers: [CarService, LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
