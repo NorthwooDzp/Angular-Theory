@@ -7,7 +7,7 @@ import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core'
 })
 
 export class CarComponent implements OnInit {
-  @Input('carItem') car: {name: string, year: number, sale: boolean};
+  @Input('carItem') car;
   // @Input() name: string;
   @ContentChild('carHeading') carHeading: ElementRef;
   /*  public carName = `Ford`;

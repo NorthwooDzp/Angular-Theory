@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
+import {CarService} from '../services/car.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent implements OnInit {
-
+  cars = [];
   filterName = '';
   // addCarStatus = false;
   /*inputText = ``;
@@ -21,24 +22,10 @@ export class CarsComponent implements OnInit {
 
   // cars2 = [`BMW`, `Audi`, `Toyota`, `Lexus`, `Lada`, `ZaZ`, `Mazda`];
 
-  constructor() {
+  constructor(private carService: CarService) {
   }
 
-  cars: [{ name: string, year: number, sale: boolean }] = [
-    {
-      name: 'Ford',
-      year: 2017,
-      sale: false
-    }, {
-      name: 'Audi',
-      year: 2010,
-      sale: false
-    }, {
-      name: `Lada`,
-      year: 2016,
-      sale: false
-    }
-  ];
+
 
   /*  changeCarName() {
       console.log('car changed');
@@ -63,9 +50,10 @@ export class CarsComponent implements OnInit {
   // asyncTitle = Observable.of('Async title in 3 sec').delay(3000);
 
   ngOnInit() {
+    this.cars = this.carService.getCars();
   }
 
-  updateCarList(car: { name: string, year: number, sale: boolean }) {
+  updateCarList(car) {
     car.sale = false;
     this.cars.push(car);
   }
