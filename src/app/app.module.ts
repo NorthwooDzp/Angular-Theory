@@ -12,6 +12,7 @@ import { AddCarComponent } from './add-car/add-car.component';
 import { BackgroundDirective } from './directives/background.directive';
 import { PowPipe } from './pipes/pow.pipe';
 import { NameFilterPipe } from './pipes/name-filter.pipe';
+import {CarService} from './services/car.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { NameFilterPipe } from './pipes/name-filter.pipe';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CarService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
