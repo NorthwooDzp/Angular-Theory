@@ -24,19 +24,19 @@ export class CarsComponent implements OnInit {
   constructor() {
   }
 
-  cars: [{ name: string, year: number, saled: boolean }] = [
+  cars: [{ name: string, year: number, sale: boolean }] = [
     {
       name: 'Ford',
       year: 2017,
-      saled: false
+      sale: false
     }, {
       name: 'Audi',
       year: 2010,
-      saled: false
+      sale: false
     }, {
       name: `Lada`,
       year: 2016,
-      saled: false
+      sale: false
     }
   ];
 
@@ -60,13 +60,13 @@ export class CarsComponent implements OnInit {
      this.inputText = (<HTMLInputElement>event.target).value;
    }*/
 
-  asyncTitle = Observable.of('Async title in 3 sec').delay(3000);
+  // asyncTitle = Observable.of('Async title in 3 sec').delay(3000);
 
   ngOnInit() {
   }
 
-  updateCarList(car: { name: string, year: number, saled: boolean }) {
-    car.saled = false;
+  updateCarList(car: { name: string, year: number, sale: boolean }) {
+    car.sale = false;
     this.cars.push(car);
   }
 

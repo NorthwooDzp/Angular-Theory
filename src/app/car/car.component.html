@@ -1,10 +1,10 @@
-<!--<h4 class="list-group-item-heading">
-  Название: "{{car.name}}"
-</h4>
-<p class="list-group-item-text">
-  Год: {{car.year}}
-</p>-->
-<ng-content></ng-content>
-<!--{{name}}-->
-
-
+<div [ngClass]="{'sales': car.sale, 'stock': !car.sale}" >
+  <h4 class="list-group-item-heading">
+    Название: "{{car.name}}"
+  </h4>
+  <p class="list-group-item-text">
+    Год: {{car.year}}
+  </p>
+  <input type="button" [disabled]="car.sale" class="btn btn-success" value="Купить" (click)="buyCar()">
+  <input type="button" [disabled]="!car.sale" class="btn btn-warning" value="Вернуть" (click)="returnCar()">
+</div>
