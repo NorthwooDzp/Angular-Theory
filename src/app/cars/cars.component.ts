@@ -26,7 +26,6 @@ export class CarsComponent implements OnInit {
   }
 
 
-
   /*  changeCarName() {
       console.log('car changed');
       this.cars[0].name = 'Toyota RAV4';
@@ -50,13 +49,9 @@ export class CarsComponent implements OnInit {
   // asyncTitle = Observable.of('Async title in 3 sec').delay(3000);
 
   ngOnInit() {
-    this.cars = this.carService.getCars();
+    this.cars = this.carService.cars;
   }
 
-  updateCarList(car) {
-    car.sale = false;
-    this.cars.push(car);
-  }
 
   /* onInput3(str) {
      this.input3Text = str.value;

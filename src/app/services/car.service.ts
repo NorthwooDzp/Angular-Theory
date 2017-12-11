@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class CarService {
-  cars = [
+  cars: [{ name: string, year: number, sale: boolean }] = [
     {
       name: 'Ford',
       year: 2017,
@@ -21,8 +21,9 @@ export class CarService {
   constructor() {
   }
 
-  getCars() {
-    return this.cars;
+
+  updateCarList(car: { name: string, year: number, sale: boolean }) {
+    this.cars.push(car);
   }
 
 }
