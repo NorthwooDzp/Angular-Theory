@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {LoggerService} from "./logger.service";
 
 @Injectable()
 export class CarService {
@@ -18,12 +19,13 @@ export class CarService {
     }
   ];
 
-  constructor() {
+  constructor(private logger: LoggerService) {
   }
 
 
   updateCarList(car: { name: string, year: number, sale: boolean }) {
     this.cars.push(car);
+    this.logger.logString(`Added car ${car.name}`);
   }
 
 }

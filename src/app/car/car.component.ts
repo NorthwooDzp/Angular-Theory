@@ -34,5 +34,4 @@ export class CarComponent implements OnInit {
     this.logger.logString(`${this.car.name} status changed to => ${this.car.sale}`);
   }
 
-  r
 }
