@@ -1,11 +1,11 @@
 <form (ngSubmit)="submitForm($event, form)" #form="ngForm">
   <div class="form-group">
     <label> E-mail </label>
-    <input type="text" class="form-control" ngModel name="email">
+    <input type="text" class="form-control" ngModel name="email" email required>
   </div>
   <div class="form-group">
     <label> Пароль </label>
-    <input type="password" class="form-control" ngModel name="password">
+    <input type="password" class="form-control" ngModel name="password" required>
   </div>
   <div class="form-group">
     <label> Выберите страну: </label>
@@ -20,5 +20,6 @@
       <input type="radio" name="answer" ngModel [value]="ans.value"> {{ans.text}}
     </label>
   </div>
-  <input type="submit" class="btn btn-success" value="Сохранить">
+  <input type="submit" class="btn btn-success" value="Сохранить"
+         [disabled]="form.form.status === 'INVALID' ? true : false ">
 </form>
