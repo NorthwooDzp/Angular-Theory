@@ -1,11 +1,13 @@
 <form (ngSubmit)="submitForm($event, form)" #form="ngForm">
-  <div class="form-group">
+  <div class="form-group" [ngClass]="{'has-error': email.status !== 'VALID' && email.touched}">
     <label> E-mail </label>
-    <input type="text" class="form-control" ngModel name="email" email required>
+    <input type="text" class="form-control" ngModel name="email" email #email="ngModel" required>
+    <p *ngIf="email.status !== 'VALID' && email.touched">Введите корректный e-mail</p>
   </div>
-  <div class="form-group">
+  <div class="form-group" [ngClass]="{'has-error': password.status !== 'VALID' && password.touched}">
     <label> Пароль </label>
-    <input type="password" class="form-control" ngModel name="password" required>
+    <input type="password" class="form-control" ngModel name="password" #password="ngModel" required>
+    <p *ngIf="password.status !== 'VALID' && password.touched">Пароль не должен быть пустым</p>
   </div>
   <div class="form-group">
     <label> Выберите страну: </label>
@@ -21,5 +23,6 @@
     </label>
   </div>
   <input type="submit" class="btn btn-success" value="Сохранить"
-         [disabled]="form.form.status === 'INVALID' ? true : false ">
+         [disabled]="form.form.status === 'INVALID' ? true : false"
+  >
 </form>
