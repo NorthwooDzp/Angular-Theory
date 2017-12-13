@@ -11,7 +11,7 @@
   </div>
   <div class="form-group">
     <label> Выберите страну: </label>
-    <select class="form-control" ngModel name="country">
+    <select class="form-control" [ngModel]="defaults.country" name="country">
       <option value="ru">Россия</option>
       <option value="by">Беларусь</option>
       <option value="ua">Україна</option>
@@ -19,7 +19,7 @@
   </div>
   <div class="radio" *ngFor="let ans of answers">
     <label>
-      <input type="radio" name="answer" ngModel [value]="ans.value"> {{ans.text}}
+      <input type="radio" name="answer" [ngModel]="defaults.answer" [value]="ans.value"> {{ans.text}}
     </label>
   </div>
   <input type="submit" class="btn btn-success" value="Сохранить"

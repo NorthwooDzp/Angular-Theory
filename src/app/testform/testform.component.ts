@@ -12,7 +12,10 @@ export class TestformComponent implements OnInit {
     {text: 'Нет', value: 'no'},
     {text: 'Да', value: 'yes'}
   ];
-
+  defaults = {
+    country: 'ua',
+    answer: 'yes'
+  }
 
   constructor() {
   }
