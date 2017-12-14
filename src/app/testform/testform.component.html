@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitForm($event, form)" #form="ngForm">
+<form (ngSubmit)="submitForm($event)" #form="ngForm" xmlns="">
   <div ngModelGroup="user" #user="ngModelGroup"
        [ngClass]="{'has-error': user.status !== 'VALID' && user.touched}">
     <div class="form-group" [ngClass]="{'has-error': email.status !== 'VALID' && email.touched}">
@@ -11,6 +11,7 @@
         #email="ngModel"
         required>
       <p *ngIf="email.status !== 'VALID' && email.touched">Введите корректный e-mail</p>
+      <input type="button" class="btn btn-primary" value="Добавить случайный e-mail" (click)="addRE()">
     </div>
     <div class="form-group" [ngClass]="{'has-error': password.status !== 'VALID' && password.touched}">
       <label> Пароль </label>
@@ -42,3 +43,11 @@
          [disabled]="form.form.status === 'INVALID' ? true : false"
   >
 </form>
+<wbr>
+<div *ngIf="isSubmited">
+  <pre>
+    {{formData | json}}
+  </pre>
+</div>
+<input type="text">
+<embed></embod>

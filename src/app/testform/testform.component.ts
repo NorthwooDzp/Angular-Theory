@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {LoggerService} from '../services/logger.service';
 
@@ -12,10 +12,17 @@ export class TestformComponent implements OnInit {
     {text: 'Нет', value: 'no'},
     {text: 'Да', value: 'yes'}
   ];
+
   defaults = {
     country: 'ua',
     answer: 'yes'
-  }
+  };
+
+  isSubmited= false;
+
+  formData = {};
+
+  @ViewChild('form') form: NgForm;
 
   constructor() {
   }
@@ -23,8 +30,17 @@ export class TestformComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(event: Event, form: NgForm) {
-    console.log(form);
+  submitForm(event: Event) {
+    // console.log(this.form);
+    this.isSubmited = true;
+    this.formData = this.form.form.value;
+    this.form.reset();
   }
 
+  addRE() {
+    const randEmail = '1234@mail.com';
+    this.form.form.patchValue({
+      user: {email: randEmail}
+    });
+  }
 }
