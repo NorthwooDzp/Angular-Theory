@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitForm($event)" #form="ngForm" xmlns="">
+<form (ngSubmit)="submitForm($event)" #form="ngForm" xmlns="" xmlns="">
   <div ngModelGroup="user" #user="ngModelGroup"
        [ngClass]="{'has-error': user.status !== 'VALID' && user.touched}">
     <div class="form-group" [ngClass]="{'has-error': email.status !== 'VALID' && email.touched}">
@@ -49,5 +49,3 @@
     {{formData | json}}
   </pre>
 </div>
-<input type="text">
-<embed></embod>

@@ -7,14 +7,15 @@ import {HomepageComponent} from './homepage/homepage.component';
 import {CarsComponent} from './cars/cars.component';
 import {CarComponent} from './car/car.component';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-import { AddCarComponent } from './add-car/add-car.component';
-import { BackgroundDirective } from './directives/background.directive';
-import { PowPipe } from './pipes/pow.pipe';
-import { NameFilterPipe } from './pipes/name-filter.pipe';
+import {AddCarComponent} from './add-car/add-car.component';
+import {BackgroundDirective} from './directives/background.directive';
+import {PowPipe} from './pipes/pow.pipe';
+import {NameFilterPipe} from './pipes/name-filter.pipe';
 import {CarService} from './services/car.service';
-import {LoggerService} from "./services/logger.service";
-import { TestformComponent } from './testform/testform.component';
+import {LoggerService} from './services/logger.service';
+import {TestformComponent} from './testform/testform.component';
+import {ReactFormComponent} from './react-form/react-form.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -27,12 +28,14 @@ import { TestformComponent } from './testform/testform.component';
     BackgroundDirective,
     PowPipe,
     NameFilterPipe,
-    TestformComponent
+    TestformComponent,
+    ReactFormComponent
   ],
   imports: [
     BrowserModule,
+    ReactFormComponent,
     FormsModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [CarService, LoggerService],
   bootstrap: [AppComponent]
