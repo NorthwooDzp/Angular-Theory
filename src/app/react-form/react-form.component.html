@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <div class="form-group">
+      <label> E-mail </label>
+      <input type="text" name="email" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label> Пароль </label>
+      <input type="password" name="password" class="form-control" formControlName="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label> Выберите страну: </label>
+    <select class="form-control" name="country" formControlName="country" >
+      <option value="ru">Россия</option>
+      <option value="by">Беларусь</option>
+      <option value="ua">Україна</option>
+    </select>
+  </div>
+  <div class="radio" *ngFor="let ans of answers">
+    <label>
+      <input type="radio" name="answer" [value]="ans.value" formControlName="answer"> {{ans.text}}
+    </label>
+  </div>
+  <input type="submit" class="btn btn-success" value="Сохранить">
+</form>

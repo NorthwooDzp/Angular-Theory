@@ -10,7 +10,7 @@
         email
         #email="ngModel"
         required>
-      <p *ngIf="email.status !== 'VALID' && email.touched">Введите корректный e-mail</p>
+      <p *ngIf="email.invalid && email.touched">Введите корректный e-mail</p>
       <input type="button" class="btn btn-primary" value="Добавить случайный e-mail" (click)="addRE()">
     </div>
     <div class="form-group" [ngClass]="{'has-error': password.status !== 'VALID' && password.touched}">
@@ -22,9 +22,9 @@
         name="password"
         #password="ngModel"
         required>
-      <p *ngIf="password.status !== 'VALID' && password.touched">Пароль не должен быть пустым</p>
+      <p *ngIf="password.invalid && password.touched">Пароль не должен быть пустым</p>
     </div>
-    <p *ngIf="user.status !== 'VALID' && user.touched">Данные пользователя введены некорректно!!!</p>
+    <p *ngIf="user.invalid && user.touched">Данные пользователя введены некорректно!!!</p>
   </div>
   <div class="form-group">
     <label> Выберите страну: </label>
@@ -40,12 +40,13 @@
     </label>
   </div>
   <input type="submit" class="btn btn-success" value="Сохранить"
-         [disabled]="form.form.status === 'INVALID' ? true : false"
+         [disabled]="form.valid === false ? true : false"
   >
 </form>
-<wbr>
+
 <div *ngIf="isSubmited">
   <pre>
     {{formData | json}}
   </pre>
 </div>
+
