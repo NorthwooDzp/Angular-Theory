@@ -29,7 +29,7 @@
       <input type="radio" name="answer" [value]="ans.value" formControlName="answer"> {{ans.text}}
     </label>
   </div>
-  <input type="submit" class="btn btn-success" [disabled]="!form.valid" value="Сохранить">
+  <input type="submit" class="btn btn-success" [disabled]="false" value="Сохранить">
 </form>
 <pre *ngIf="isSubmited">
   {{form.value | json}}
