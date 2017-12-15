@@ -37,6 +37,10 @@ export class ReactFormComponent implements OnInit {
     this.isSubmited = true;
   }
 
+  logger(){
+    console.log(this.form.get('user.email').errors);
+  }
+
   checkPassLength(control: FormControl) {
     if (control.value.length < this.minPassLength) {
       return {
