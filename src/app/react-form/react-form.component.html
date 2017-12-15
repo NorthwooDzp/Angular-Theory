@@ -1,20 +1,19 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <div class="form-group"
-         [ngClass]="{'has-success': form.get('email').valid && form.get('email').touched,
-          'has-error': form.get('email').invalid && form.get('email').touched}">
+  <div formGroupName="user">
+    <div class="form-group" [ngClass]="{'has-error': !form.get('user.email').valid && form.get('user.email').touched,
+    'has-succes': form.get('user.email').valid && form.get('user.email').touched}">
       <label> E-mail </label>
       <input type="text" name="email" class="form-control" formControlName="email">
-      <p *ngIf="form.get('email').invalid && form.get('email').touched" class="alert alert-danger">Некорректный
+      <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched" class="alert alert-danger">
+        Некорректный
         e-mail!</p>
     </div>
-    <div class="form-group"
-         [ngClass]="{'has-success': form.get('password').valid && form.get('password').touched,
-          'has-error': form.get('password').invalid && form.get('password').touched}">
+    <div class="form-group" [ngClass]="{'has-error': !form.get('user.password').valid && form.get('user.password').touched,
+    'has-succes': form.get('user.password').valid && form.get('user.password').touched}">
       <label> Пароль </label>
       <input type="password" name="password" class="form-control" formControlName="password">
-      <p class="alert alert-danger" *ngIf="form.get('password').invalid && form.get('password').touched">Пароль не
-        должен быть пустым или содержать символы кроме латинских букв, цифр, ".", "_"</p>
+      <p *ngIf="form.get('user.password').invalid && form.get('user.password').touched" class="alert alert-danger">
+        Пароль должен быть не менее 4-х символов и не содержать символы кроме латинских букв, цифр, ".", "_"</p>
     </div>
   </div>
   <div class="form-group">
@@ -32,3 +31,6 @@
   </div>
   <input type="submit" class="btn btn-success" [disabled]="!form.valid" value="Сохранить">
 </form>
+<pre *ngIf="isSubmited">
+  {{form.value | json}}
+</pre>

@@ -12,7 +12,7 @@ export class ReactFormComponent implements OnInit {
     {text: 'Да', value: 'yes'},
     {text: 'Нет', value: 'no'}
   ];
-
+  isSubmited = false;
   form: FormGroup;
 
   constructor() {
@@ -20,8 +20,10 @@ export class ReactFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_.0-9]{4,200}')]),
+      user: new FormGroup({
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_.0-9]{4,200}')]),
+      }),
       country: new FormControl('ua'),
       answer: new FormControl('yes')
     });
@@ -29,5 +31,6 @@ export class ReactFormComponent implements OnInit {
 
   onSubmit() {
     console.log('submited', this.form);
-  };
+    this.isSubmited = true;
+  }
 }
