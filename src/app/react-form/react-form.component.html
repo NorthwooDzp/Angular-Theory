@@ -1,17 +1,25 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
-    <div class="form-group">
+    <div class="form-group"
+         [ngClass]="{'has-success': form.get('email').valid && form.get('email').touched,
+          'has-error': form.get('email').invalid && form.get('email').touched}">
       <label> E-mail </label>
       <input type="text" name="email" class="form-control" formControlName="email">
+      <p *ngIf="form.get('email').invalid && form.get('email').touched" class="alert alert-danger">Некорректный
+        e-mail!</p>
     </div>
-    <div class="form-group">
+    <div class="form-group"
+         [ngClass]="{'has-success': form.get('password').valid && form.get('password').touched,
+          'has-error': form.get('password').invalid && form.get('password').touched}">
       <label> Пароль </label>
       <input type="password" name="password" class="form-control" formControlName="password">
+      <p class="alert alert-danger" *ngIf="form.get('password').invalid && form.get('password').touched">Пароль не
+        должен быть пустым или содержать символы кроме латинских букв, цифр, ".", "_"</p>
     </div>
   </div>
   <div class="form-group">
     <label> Выберите страну: </label>
-    <select class="form-control" name="country" formControlName="country" >
+    <select class="form-control" name="country" formControlName="country">
       <option value="ru">Россия</option>
       <option value="by">Беларусь</option>
       <option value="ua">Україна</option>
@@ -22,5 +30,5 @@
       <input type="radio" name="answer" [value]="ans.value" formControlName="answer"> {{ans.text}}
     </label>
   </div>
-  <input type="submit" class="btn btn-success" value="Сохранить">
+  <input type="submit" class="btn btn-success" [disabled]="!form.valid" value="Сохранить">
 </form>
