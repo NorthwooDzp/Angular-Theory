@@ -11,9 +11,11 @@
     <div class="form-group" [ngClass]="{'has-error': !form.get('user.password').valid && form.get('user.password').touched,
     'has-succes': form.get('user.password').valid && form.get('user.password').touched}">
       <label> Пароль </label>
-      <input type="password" name="password" class="form-control" formControlName="password">
+      <input (input)="logStatus()" type="password" name="password" class="form-control" formControlName="password">
       <p *ngIf="form.get('user.password').invalid && form.get('user.password').touched" class="alert alert-danger">
-        Пароль должен быть не менее 4-х символов и не содержать символы кроме латинских букв, цифр, ".", "_"</p>
+        Пароль не должен содержать символы кроме латинских букв, цифр, ".", "_"</p>
+      <p *ngIf="form.get('user.password').value.length < minPassLength && form.get('user.password').touched" class="alert alert-danger">
+        Пароль должен состоять минимум из {{minPassLength}}-х символов</p>
     </div>
   </div>
   <div class="form-group">

@@ -14,15 +14,21 @@ export class ReactFormComponent implements OnInit {
   ];
   isSubmited = false;
   form: FormGroup;
+  minPassLength = 4;
 
   constructor() {
+  }
+
+  logStatus() {
+    console.dir(this.form.get('user.password').errors);
+    console.log(this.form.get('user.password').valid);
   }
 
   ngOnInit() {
     this.form = new FormGroup({
       user: new FormGroup({
         email: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_0-9]+@[a-zA-Z]+?\.[a-zA-Z]{2,6}')]),
-        password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_.0-9]{4,200}')]),
+        password: new FormControl('', [Validators.required, Validators.pattern(`[a-zA-Z_.0-9]{${this.minPassLength},200}`)]),
       }),
       country: new FormControl('ua'),
       answer: new FormControl('yes')
@@ -33,6 +39,9 @@ export class ReactFormComponent implements OnInit {
     console.log('submited', this.form);
     this.isSubmited = true;
   }
+
+
 }
+
 /*'[a-zA-Z_0-9]+@[a-zA-Z]+?\.[a-zA-Z]{2-6}'*/
 /*'[a-zA-Z_0-9]+@[a-zA-Z]+?\.[a-zA-Z]{2,6}'*/
