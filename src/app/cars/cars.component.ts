@@ -10,7 +10,7 @@ import {CarService} from '../services/car.service';
   styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent implements OnInit {
-  cars = [];
+  cars;
   filterName = '';
   // addCarStatus = false;
   /*inputText = ``;
@@ -49,7 +49,9 @@ export class CarsComponent implements OnInit {
   // asyncTitle = Observable.of('Async title in 3 sec').delay(3000);
 
   ngOnInit() {
-    this.cars = this.carService.cars;
+    /*this.carService.getCars().subscribe(response => {
+      console.log(response);
+    });*/
   }
 
 

@@ -16,6 +16,7 @@ import {LoggerService} from './services/logger.service';
 import {TestformComponent} from './testform/testform.component';
 import {ReactFormComponent} from './react-form/react-form.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HttpCarsComponent } from './http-cars/http-cars.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {HttpClientModule} from '@angular/common/http';
     PowPipe,
     NameFilterPipe,
     TestformComponent,
-    ReactFormComponent
+    ReactFormComponent,
+    HttpCarsComponent
   ],
   imports: [
     BrowserModule,

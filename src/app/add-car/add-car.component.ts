@@ -25,7 +25,7 @@ export class AddCarComponent implements OnInit {
       year: this.carYear.nativeElement.value,
       sale: false
     };
-    this.carService.updateCarList(newCar);
+    /*this.carService.updateCarList(newCar);*/
     // this.carName = carName.value;
     /*this.cars.push({
       name: this.carName,
