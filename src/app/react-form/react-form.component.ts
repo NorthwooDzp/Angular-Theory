@@ -33,7 +33,8 @@ export class ReactFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('submited', this.form);
+    console.log('submited');
+    console.dir(this.form);
     this.isSubmited = true;
   }
 
