@@ -1,3 +1,8 @@
-{"cars": [
-  {"id": "001", "name": "BMW", "year": 2011, "isSold": false}
-]}
+{
+  "cars": [{
+    "id": 1,
+    "name": "BMW",
+    "year": 2015,
+    "isSold": false
+  }]
+}
