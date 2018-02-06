@@ -25,7 +25,7 @@ export class ReactFormComponent implements OnInit {
     this.form = new FormGroup({
       user: new FormGroup({
         email: new FormControl('', [Validators.required, Validators.email], [this.checkForEmail]),
-        password: new FormControl('', [Validators.required, Validators.pattern("[a-zA-Z_.0-9]+"), this.checkPassLength.bind(this)]),
+        password: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z_.0-9]+'), this.checkPassLength.bind(this)]),
       }),
       country: new FormControl('ua'),
       answer: new FormControl('yes')
